@@ -1,0 +1,42 @@
+/* src/components/HomePage/animatedVideo.css */
+
+.video-container {
+    transition: width 0.5s ease-in-out; /* Smooth transition for width */
+    margin: 0 auto;
+    border-radius: 0.2rem; /* Add border radius */
+    position: relative;
+  }
+  
+  .responsive-video {
+    margin: 4rem 0;
+    transition: filter 0.5s ease-in-out; /* Smooth transition for filter */
+    width: 100%;
+    height: 35rem;
+    object-fit: cover; /* Ensures the video maintains its aspect ratio */
+    border-radius: inherit; /* Ensure video inherits border radius from container */
+    filter: brightness(0.4); /* Start with darker brightness */
+  }
+  
+  .video-container.in-view .responsive-video {
+    filter: brightness(1); /* Increase brightness to normal when in view */
+  }
+  
+  .videotext {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    width: 60%;
+  }
+
+
+  @media (max-width: 750px) {
+    .videotext{
+        font-size: 0.88rem;
+        font-weight: 600;
+        width: 80%;
+    }
+}

@@ -1,0 +1,11 @@
+  .banner-button {
+    background-color: #e53527;
+    color: white;
+    padding: 0.8rem 1.9rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  

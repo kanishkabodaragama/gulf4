@@ -1,0 +1,125 @@
+.bottom-section {
+  background: rgb(180, 181, 185);
+  background: linear-gradient(
+    170deg,
+    rgba(180, 181, 185, 1) 20%,
+    rgba(240, 241, 241, 1) 80%
+  );
+}
+
+.bs-contact {
+  background-color: #fff;
+  color: black;
+  padding: 0.9rem 2.5rem;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.bs-contact:hover {
+  background-color: #e53527;
+  color: white;
+  padding: 0.9rem 2.5rem;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.bs-service {
+  background-color: #e53527;
+  color: white;
+  padding: 0.9rem 2.5rem;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.bs-service:hover {
+  background-color: #707173;
+  color: white;
+  padding: 0.9rem 2.5rem;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.bottom-image-section {
+  position: relative;
+}
+
+.bottom-inside-image {
+  position: absolute;
+  bottom: 80%;
+  right: 3%;
+  width: 25%;
+  height: 50%;
+  object-fit: cover;
+  z-index: 1;
+  transition: transform 0.3s ease-out;
+}
+
+/* Banner main text animation */
+.animated-container {
+  display: inline-block;
+  opacity: 0;
+  transform: rotateY(90deg);
+  transition: transform 2s ease, opacity 1.5s ease;
+}
+
+.animated-in {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+
+/* Banner buttons animations here */
+.animated-container {
+  transition: all 0.3s ease;
+}
+
+.bs-service {
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  background-color: #e53527;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.bs-service svg {
+  margin-right: 10px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.bs-service:hover svg {
+  opacity: 1;
+}
+
+.bs-service:hover .IoMdArrowForward {
+  transform: rotate(0deg);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .bottom-inside-image {
+    position: absolute;
+    bottom: 35rem;
+    right: 5%;
+    width: 20%;
+    height: 50%;
+    object-fit: cover;
+    z-index: 1;
+    transition: transform 0.3s ease-out;
+  }
+}

@@ -1,0 +1,66 @@
+/* service-offering.css */
+
+.sticky-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  
+  .hamburger-menu {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .menu-icon {
+    font-size: 2rem;
+  }
+
+  .navbar-links {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .nav-link {
+    margin-bottom: 0.9rem;
+    margin-right: 1rem;
+    font-size: 1rem;
+    transition: font-weight 0.3s;
+  }
+  
+  .nav-link:hover {
+    font-weight: normal;
+  }
+  
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .hamburger-menu {
+      display: flex;
+      width: 40%;
+      text-align: center;
+    }
+  
+    .navbar-links {
+      display: none; /* Hide the menu by default */
+      flex-direction: column;
+      width: 100%;
+      transition: all 0.3s ease-in-out;
+    }
+  
+    .navbar-links.expanded {
+      display: flex;
+      margin-top: 5%;
+    }
+  
+    .nav-link {
+      margin: .5rem 0;
+      text-align: center;
+    }
+  
+    .sticky-navbar {
+      padding: 1rem 2rem;
+    }
+  }
+  

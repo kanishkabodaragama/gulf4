@@ -1,0 +1,72 @@
+.accordion-item {
+  margin: 0.1rem 0;
+  overflow: hidden;
+}
+
+.accordion-header {
+  padding: 0.1rem 1rem 0.4rem 0;
+  cursor: pointer;
+}
+
+.accordion-button {
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #635f5f;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.accordion-button:hover {
+  color: #000000; /* Change color on hover */
+}
+
+.accordion-button::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; /* Adjust the position of the underline */
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #000000; /* Color of the underline */
+  transition: width 0.3s ease; /* Animation for the underline */
+}
+
+.accordion-button:hover::after {
+  width: 100%; /* Expand the underline on hover */
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.8s ease-out;
+  margin-left: 3rem;
+  font-size: 1.15rem;
+  font-weight: 100;
+  margin-bottom: 1.5rem;
+}
+
+.accordion-content.open {
+  max-height: 100vh;
+  transition: max-height 1.3s ease-in;
+}
+
+.accordion-button.underline {
+  text-decoration: underline;
+  text-decoration-color: rgb(218, 214, 214); /* Change this to your desired color */
+  text-underline-offset: 9.5px; /* Matches the underline-offset class */
+}
+
+
+/* Hide underline in specific contexts */
+.no-black-underline .accordion-button::after {
+  background-color: transparent !important; /* Remove black underline */
+}
+
+.no-black-underline .accordion-button:hover::after {
+  width: 0; /* Prevent the underline from expanding */
+}
+

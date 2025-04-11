@@ -1,0 +1,105 @@
+/* Desktop sticky navigation list styles */
+.sticky ul li {
+  display: flex;
+  flex-direction: column;
+}
+
+.sticky ul li {
+  max-width: 250px; /* Adjust the max-width as needed */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Remove height and overflow restrictions */
+.desktop-view, .mobile-view {
+  overflow-y: visible; /* Allow full content visibility */
+  height: auto; /* Allow content to determine height */
+  max-height: none; /* Remove max-height restriction */
+}
+
+.desktop-view .flex {
+  height: auto;
+  overflow: visible;
+}
+
+.mobile-view .mobile-content {
+  height: auto;
+  overflow: visible;
+}
+
+/* Flex container for desktop layout */
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  overflow: visible;
+}
+
+.left-section {
+  flex: 0 0 250px;
+}
+
+.right-section {
+  flex: 1;
+}
+
+/* -------- Mobile-Specific Styles -------- */
+
+/* Hide the desktop view on mobile */
+@media (max-width: 768px) {
+  .desktop-view {
+    display: none;
+  }
+
+  .mobile-view {
+    display: block;
+    overflow-y: visible;
+    position: relative;
+  }
+
+  .full-screen-header {
+    height: auto;
+    display: block;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.25rem;
+  }
+
+  .mobile-content {
+    padding: 85px;
+    height: auto;
+    overflow-y: visible;
+  }
+
+  .mobile-content div {
+    margin-bottom: 2rem;
+  }
+
+  .mobile-content h2 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .mobile-content p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .red-bar {
+    display: none;
+  }
+}
+
+/* Ensure desktop styles are unaffected */
+@media (min-width: 769px) {
+  .mobile-view {
+    display: none;
+  }
+
+  .desktop-view {
+    display: block;
+    overflow: visible;
+    position: relative;
+  }
+}

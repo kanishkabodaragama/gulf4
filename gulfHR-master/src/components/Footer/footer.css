@@ -1,0 +1,11 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    /* Set background image */
+    background-image: url('/public/images/Footer/footer_bg.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    padding: 20px; /* Add padding for spacing */
+    color: #fff;
+    
+}

@@ -1,0 +1,409 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  backdrop-filter: blur(10px); /* Blurry effect for transparent navbar */
+  background-color: rgba(255, 255, 255, 0.8); /* Transparent background */
+}
+
+.navbar-top {
+  backdrop-filter: none; /* Remove blurry effect */
+  background-color: rgba(255, 255, 255, 0); /* Fully transparent */
+}
+
+.navbar-visible {
+  transform: translateY(0);
+}
+
+.navbar-hidden {
+  transform: translateY(-100%);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 100%; /* Ensure it doesn't exceed the viewport */
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .navbar-container{
+    display: none;
+  }
+
+}
+
+.navbar-container-mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 100%; /* Ensure it doesn't exceed the viewport */
+  overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+  .navbar-container-mobile{
+    display: none;
+  }
+
+}
+
+.logo img {
+  max-width: 200px;
+  transition: max-width 0.3s ease;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  
+}
+
+.navbar-item {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-icon {
+  margin-right: 0.5rem;
+  font-size: 1.5rem; /* Adjusted icon size */
+}
+
+.navbar-link {
+  color: black;
+  text-decoration: none;
+  font-size: 1.05rem; /* Increased font size for visibility */
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Fixed underline for selected item */
+.navbar-option-selected::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
+
+/* Animated underline for other items */
+.navbar-link:not(.navbar-option-selected)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -3px;
+  width: 0;
+  height: 1px;
+  background-color: black;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar-link:not(.navbar-option-selected):hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Change text color to white on Service Offering page */
+.navbar.service-offering-page .navbar-link,
+.navbar.service-offering-page .navbar-icon {
+  color: white; /* Change text and icon color to white */
+}
+
+.navbar.service-offering-page .navbar-option-selected::before {
+  background-color: white; /* Underline color for selected item */
+}
+
+.navbar.service-offering-page .navbar-link:not(.navbar-option-selected)::after {
+  background-color: white; /* Animated underline color for other items */
+}
+
+.navbar.service-offering-page .navbar-link:hover {
+  color: white; /* Ensure hover text remains white */
+}
+
+.navbar.service-offering-page .navbar-link:not(.navbar-option-selected):hover::after {
+  background-color: white; /* Animated underline stays white */
+}
+
+.navbar.service-offering-page .book-demo-button:hover {
+  color: white;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+}
+
+.mobile-menu-button {
+  display: none; /* Hidden by default */
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: black; /* Solid black background when open */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1200;
+  overflow-y: auto;
+}
+
+.mobile-menu.open {
+  transform: translateX(0); /* Slide into view when open */
+  /* width: 80%;
+  left: 20%; */
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1500; /* Ensure above the menu */
+}
+
+.mobile-menu-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.mobile-menu-item {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 1.5rem;
+}
+
+.mobile-navbar-option {
+  color: white;
+  font-size: 36px; /* Increased font size for better readability */
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+/* Fixed underline for selected mobile menu item */
+.mobile-navbar-option.navbar-option-selected::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+}
+
+/* Animated underline for other mobile menu items */
+.mobile-navbar-option:not(.navbar-option-selected)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease-in-out;
+}
+
+.mobile-navbar-option:not(.navbar-option-selected):hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Book a Demo Button Styling */
+.book-demo-link {
+  text-decoration: none;
+}
+
+.book-demo-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e53527; /* Red background */
+  color: white; /* White text */
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+  border: none;
+  font-size: 1.05rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.book-demo-button:hover {
+  transform: scale(1.1);
+}
+
+/* Bounce animation for text */
+.book-demo-text {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.book-demo-text span {
+  display: inline-block;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+  animation: none;
+}
+
+.book-demo-button:hover .book-demo-text span {
+  animation: bounceText 0.2s ease forwards;
+}
+
+/* Keyframe animations */
+@keyframes bounceText {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* HIDE MOBILE MENU BUTTON ON DESKTOP */
+@media (min-width: 769px) {
+  .mobile-menu-button {
+    display: none; /* Hide mobile menu icon on desktop */
+  }
+
+  .navbar-links {
+    display: flex; /* Ensure navbar links display on desktop */
+  }
+}
+
+/* SHOW MOBILE MENU BUTTON AND HIDE LINKS ON MOBILE */
+@media (max-width: 768px) {
+  .mobile-menu-button {
+    display: flex; /* Show mobile menu button on mobile */
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: black; /* Icon color */
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: -20px;
+  }
+
+  .navbar-links {
+    display: none; /* Hide navbar links on mobile */
+  }
+}
+
+body.menu-open {
+  overflow: hidden; /* Disable scrolling when menu is open */
+  position: fixed;
+  width: 100%; /* Prevent shifting of the content */
+}
+
+.language-selector {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: black;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .language-selector{
+    justify-content: start;
+  }
+
+}
+
+.language-button {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Make language selector text white on Service Offering page */
+.navbar.service-offering-page .language-selector {
+  color: white; /* Change the text color to white */
+}
+
+.navbar.service-offering-page .language-selector .language-button {
+  color: white; /* Change button text color */
+}
+
+.navbar.service-offering-page .language-selector .navbar-icon {
+  color: white; /* Change the icon color to white */
+}
+
+.navbar.service-offering-page .language-dropdown {
+  background-color: #333; /* Dark dropdown background */
+  color: white; /* White text in dropdown */
+  border: 1px solid white; /* Optional border for better visibility */
+}
+
+.navbar.service-offering-page .language-dropdown-item:hover {
+  background-color: #555; /* Slightly lighter background on hover */
+}
+
+
+@media (max-width: 768px) {
+  .book-demo-button {
+    padding: 0.5rem 1rem; /* Reduced padding */
+    font-size: 13px; /* Smaller font size */
+    border-radius: 1.5rem; /* Slightly smaller border radius */
+    max-width: 200px; /* Limit maximum width */
+    margin: 1rem auto; /* Center the button with some margin */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .book-demo-icon {
+    display: none;
+  }
+
+  .book-demo-text {
+    display: flex;
+    align-items: center;
+  }
+
+  .book-demo-text span {
+    font-size: 0.9rem; /* Smaller text size */
+  }
+
+  .logo img {
+    max-width: 90px;
+    transition: max-width 0.3s ease;
+    margin-left: -15px;
+  }
+}
+

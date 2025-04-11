@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  flex-direction: row; /* Default to horizontal alignment */
+  justify-content: space-between; /* Adjust this as needed */
+  align-items: center; /* Align items vertically in the center */
+  padding: 20px;
+}
+
+.div1, .div2 {
+  flex: 1; /* Each div takes equal space * /* Optional: Adds some space between the divs */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack vertically on small screens */
+  }
+}
+
+.content-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.text-content {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.image-content {
+  flex: 1;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.image-content img {
+  animation: fadeIn 2s ease-in-out;
+}
+
+.image-content {
+  justify-content: flex-end; /* Aligns content to the right */
+}

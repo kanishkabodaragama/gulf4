@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../src/assets/fonts/sourcesanspro-regular.woff") format("truetype");
+  /* Adjust the path to your font file */
+  /* You may need to use different format() values depending on the browser support */
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Source Sans 3",
+    "Source Sans Pro", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f8f8;
+}
+
+code {
+  font-family: "Source Sans 3", "Source Sans Pro", source-code-pro, Menlo,
+    Monaco, Consolas, "Courier New", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.App {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
